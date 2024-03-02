@@ -19,7 +19,7 @@ const Navbar = () => {
         <ul className='hidden md:flex font-semibold'>
             <li>
                 <Link to="home" smooth={true} duration={500} className='hover:underline cursor-pointer'>
-                    Home
+                    home
                 </Link>
             </li>
             {/* <li>
@@ -44,7 +44,7 @@ const Navbar = () => {
             </li> */}
             <li>
                 <Link to="Form" smooth={true} duration={500} className='hover:underline cursor-pointer'>
-                    Transform
+                    transform
                 </Link>
             </li>
         </ul>
