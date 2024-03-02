@@ -1,5 +1,6 @@
 import { BedrockRuntimeClient, InvokeModelCommand} from '@aws-sdk/client-bedrock-runtime'
 import axios from 'axios'
+import { FaJsSquare } from 'react-icons/fa'
 
 
 const AWS_DEFAULT_REGION = "us-west-2"
@@ -51,3 +52,5 @@ async function stableApi(prompt) {
       const parsedBody = JSON.parse(body);
       return parsedBody.artifacts[0].base64
 }
+
+export default jurassicApi;
