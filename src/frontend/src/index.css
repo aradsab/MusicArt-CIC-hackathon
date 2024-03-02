@@ -94,14 +94,6 @@
     display: inline-block;
 }
 
-/* .home-emoji {
-    animation-name: wave-animation;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    transform-origin: 70% 70%;
-    display: inline-block;
-} */
-
 .square-container {
     position: relative;
     width: 100%;
