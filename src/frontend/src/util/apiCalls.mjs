@@ -53,5 +53,16 @@ async function stableDiffusionApi(prompt) {
     const response = await client.send(command);
     console.log(response)
 }
-
-let summary = jurassicApi('Dragon')
+async function stableApi(prompt) {
+    const input = {
+        
+        modelId : "stability.stable-diffusion-xl-v1",
+        contentType: "application/json",
+        accept: "application/json",
+        body: "{\"text_prompts\":[{\"text\":\"" + prompt + "\",\"weight\":1}],\"cfg_scale\":10,\"seed\":0,\"steps\":50,\"width\":512,\"height\":512}"
+        
+      };
+      const command = new InvokeModelCommand(input);
+      const response = await client.send(command);
+      console.log(response.body)
+}
