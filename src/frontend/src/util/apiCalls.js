@@ -2,9 +2,6 @@ import { BedrockRuntimeClient, InvokeModelCommand} from '@aws-sdk/client-bedrock
 import axios from 'axios'
 
 
-// const axios = require('axios');
-// const { BedrockRuntimeClient, InvokeModelCommand } = require('@aws-sdk/client-bedrock-runtime');
-
 const AWS_DEFAULT_REGION = "us-west-2"
 const AWS_ACCESS_KEY_ID = "ASIA42BKWTM3NI4IX67R"
 const AWS_SECRET_ACCESS_KEY = "D2qjI5ACfruGItiPlS591uKpB46pl+GE6/SPRfTr"
@@ -13,22 +10,25 @@ const AWS_SESSION_TOKEN = "IQoJb3JpZ2luX2VjEFMaCXVzLWVhc3QtMSJHMEUCIDz6IYGeVmGnw
 async function jurassicApi(prompt) {
     let config = {
         service_name: "bedrock-runtime",
-        region_name: "us-west-2",
-        aws_access_key_id: AWS_ACCESS_KEY_ID,
-        aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
-        aws_session_token: AWS_SESSION_TOKEN
+        region: "us-west-2",
+        credentials: {
+            accessKeyId: AWS_ACCESS_KEY_ID,
+            secretAccessKey: AWS_SECRET_ACCESS_KEY,
+            sessionToken: AWS_SESSION_TOKEN
+        }
     }
 
     const client = new BedrockRuntimeClient(config);
 
-    const input = { // InvokeModelRequest
+    const input = {
         body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":400,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
         contentType: "application/json",
         accept: "application/json",
-        modelId: "ai21.j2-ultra-v1", // required
+        modelId: "ai21.j2-ultra-v1",
       };
       const command = new InvokeModelCommand(input);
       const response = await client.send(command);
+      console.log(response)
 }
 
 jurassicApi('Dragon')
