@@ -1,5 +1,4 @@
 import { BedrockRuntimeClient, InvokeModelCommand} from '@aws-sdk/client-bedrock-runtime'
-import axios from 'axios'
 
 const AWS_DEFAULT_REGION = "us-west-2"
 const AWS_ACCESS_KEY_ID = "ASIA42BKWTM3NI4IX67R"
@@ -32,10 +31,10 @@ async function jurassicApi(prompt) {
       const jsonString = decoder.decode(new Uint8Array(response.body));
       const parsedBody = JSON.parse(jsonString);
       console.log(parsedBody.completions[0].data.text)
-      return parsedBody;
+      return stableApi(parsedBody);
 }
 
-async function stableApi(prompt) {
+export async function stableApi(prompt) {
     const input = {
         
         modelId : "stability.stable-diffusion-xl-v1",

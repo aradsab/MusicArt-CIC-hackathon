@@ -1,4 +1,4 @@
-import { stableApi } from './apiCalls.mjs'; // Adjust the import path as needed
+import { stableApi } from "./apiCalls.mjs";
 
 export const getBase64Image = async (prompt) => {
     try {
