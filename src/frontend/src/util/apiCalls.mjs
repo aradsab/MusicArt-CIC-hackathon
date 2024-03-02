@@ -29,30 +29,12 @@ async function jurassicApi(prompt) {
       const command = new InvokeModelCommand(input);
       const response = await client.send(command);
 
-      const body = Buffer.from(response.body).toString('utf8'); // Assuming response is a Buffer or a string
+      const body = Buffer.from(response.body).toString('utf8');
       const parsedBody = JSON.parse(body);
       console.log(parsedBody.completions[0].data.text)
       return parsedBody;
 }
 
-async function stableDiffusionApi(prompt) {
-    const input = {
-        prompt_data: "a landscape with trees",
-        body: {
-            "text_prompts": [{"text": prompt_data}],
-            "cfg_scale": 10,
-            "seed": 20,
-            "steps": 50
-        },
-        modelId: "stability.stable-diffusion-xl",
-        accept: "application/json",
-        contentType: "application/json"
-    }
-
-    const command = new InvokeModelCommand(input);
-    const response = await client.send(command);
-    console.log(response)
-}
 async function stableApi(prompt) {
     const input = {
         
@@ -64,5 +46,8 @@ async function stableApi(prompt) {
       };
       const command = new InvokeModelCommand(input);
       const response = await client.send(command);
-      console.log(response.body)
+      
+      const body = Buffer.from(response.body).toString('utf8');
+      const parsedBody = JSON.parse(body);
+      return parsedBody.artifacts[0].base64
 }
