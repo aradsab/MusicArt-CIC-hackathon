@@ -26,7 +26,7 @@ const Home = () => {
                     <HiArrowNarrowRight className='ml-3' />
                 </span>
                 </button> */}
-                <Link to="home" smooth={true} duration={500} className='flex flex-col justify-center items-center font-semibold cursor-pointer hover:scale-105 duration-300 text-gray-400 text-lg font-md'>
+                <Link to="input" smooth={true} duration={500} className='flex flex-col justify-center items-center font-semibold cursor-pointer hover:scale-105 duration-300 text-gray-400 text-lg font-md'>
                     <p>
                         try it out!
                     </p>
