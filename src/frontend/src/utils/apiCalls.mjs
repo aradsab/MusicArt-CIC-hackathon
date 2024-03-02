@@ -1,6 +1,5 @@
 import { BedrockRuntimeClient, InvokeModelCommand} from '@aws-sdk/client-bedrock-runtime'
 import axios from 'axios'
-import { FaJsSquare } from 'react-icons/fa'
 
 
 const AWS_DEFAULT_REGION = "us-west-2"
@@ -36,7 +35,7 @@ async function jurassicApi(prompt) {
       return parsedBody;
 }
 
-async function stableApi(prompt) {
+export async function stableApi(prompt) {
     const input = {
         
         modelId : "stability.stable-diffusion-xl-v1",
@@ -53,4 +52,3 @@ async function stableApi(prompt) {
       return parsedBody.artifacts[0].base64
 }
 
-export default jurassicApi;
