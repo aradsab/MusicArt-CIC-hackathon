@@ -46,6 +46,7 @@ async function stableApi(prompt) {
       console.log(response.body)
 }
 
+// as
 
 
 stableApi('Dragon')
