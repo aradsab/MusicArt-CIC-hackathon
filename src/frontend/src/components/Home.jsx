@@ -18,14 +18,6 @@ const Home = () => {
                 into art
             </h2>
             <div className='pt-5'>
-                {/* <button className='font-semibold group border-2 px-6 py-3 my-2 flex items-center hover:border-[#4171ff] transition ease-in-out duration-500 rounded-md'>
-                <Link to="projects" smooth={true} duration={500}>
-                    Try it out!
-                </Link> 
-                <span className='group-hover:rotate-90 duration-300'>
-                    <HiArrowNarrowRight className='ml-3' />
-                </span>
-                </button> */}
                 <Link to="input" smooth={true} duration={500} className='flex flex-col justify-center items-center font-semibold cursor-pointer hover:scale-105 duration-300 text-gray-400 text-lg font-md'>
                     <p>
                         try it out!
