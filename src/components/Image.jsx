@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getBase64Image } from '../utils/renderImage';
+import { getBase64Image } from '../util/renderImage';
 
 const ImageComponent = ({ prompt }) => {
   const [image, setImage] = useState('');
