@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <Home />
       <Input />
-      <ImageComponent />
+      {/* <ImageComponent /> */}
     </div>
   );
 }

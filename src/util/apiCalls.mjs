@@ -18,6 +18,10 @@ let config = {
 const client = new BedrockRuntimeClient(config);
 
 async function jurassicApi(prompt) {
+
+    // const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, " "); // Replace all types of line breaks with a space
+
+
     const input = {
         body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":400,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
         contentType: "application/json",
@@ -30,11 +34,12 @@ async function jurassicApi(prompt) {
       const decoder = new TextDecoder('utf-8');
       const jsonString = decoder.decode(new Uint8Array(response.body));
       const parsedBody = JSON.parse(jsonString);
-      console.log(parsedBody.completions[0].data.text)
-      return stableApi(parsedBody);
+      console.log("console 2" + parsedBody.completions[0].data.text)
+      return stableApi(parsedBody.completions[0].data.text);
 }
 
-export async function stableApi(prompt) {
+export async function stableApi(rawPrompt) {
+    const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, " ");
     const input = {
         
         modelId : "stability.stable-diffusion-xl-v1",
@@ -49,7 +54,7 @@ export async function stableApi(prompt) {
       const decoder = new TextDecoder('utf-8');
       const jsonString = decoder.decode(new Uint8Array(response.body));
       const parsedBody = JSON.parse(jsonString);
-      console.log(parsedBody.artifacts[0].base64)
+      console.log("console 3" + parsedBody.artifacts[0].base64)
       return parsedBody.artifacts[0].base64
 }
 
