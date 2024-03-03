@@ -14,9 +14,11 @@ const Input = () => {
 
   const callApi = async (value) => {
     try {
+      // Remove line breaks from the value
+      const sanitizedValue = value.replace(/\r?\n|\r/g, "");
+  
       // Wait for the Promise to resolve and get the result
-      
-      const returnText = await jurassicApi(value);
+      const returnText = await jurassicApi(sanitizedValue);
       console.log("console1 " + returnText);
       setImage(returnText);
     } catch (error) {
