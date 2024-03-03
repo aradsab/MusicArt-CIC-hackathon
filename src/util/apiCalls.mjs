@@ -20,10 +20,13 @@ const client = new BedrockRuntimeClient(config);
 async function jurassicApi(prompt) {
 
     // const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, " "); // Replace all types of line breaks with a space
+    prompt =  "give a 20 word prompt for a drawing: " + prompt;
+    console.log("before" + prompt);
 
 
     const input = {
-        body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":500,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
+        
+        body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":500,\"temperature\":0.2,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
         contentType: "application/json",
         accept: "application/json",
         modelId: "ai21.j2-ultra-v1",
@@ -39,6 +42,7 @@ async function jurassicApi(prompt) {
 }
 
 export async function stableApi(rawPrompt) {
+    // console.log("hi")
     const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, " ");
     const input = {
         
@@ -48,8 +52,12 @@ export async function stableApi(rawPrompt) {
         body: "{\"text_prompts\":[{\"text\":\"" + prompt + "\",\"weight\":1}],\"cfg_scale\":10,\"seed\":0,\"steps\":50,\"width\":512,\"height\":512}"
         
       };
+      
       const command = new InvokeModelCommand(input);
+    console.log(command);
+
       const response = await client.send(command);
+      console.log("HI");
       
       const decoder = new TextDecoder('utf-8');
       const jsonString = decoder.decode(new Uint8Array(response.body));

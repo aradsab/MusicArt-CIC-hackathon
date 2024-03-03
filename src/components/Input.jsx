@@ -29,7 +29,7 @@ const Input = () => {
 
   // NOTE: we have all these words to prevent people from typing them into our bot
   function filterWords(inputString) {
-    
+    const wordsToRemove = ["fuck", "bitch", "bitches"];
     const lowercaseWordsToRemove = wordsToRemove.map(word => word.toLowerCase());
     const words = inputString.split(/\s+/);
     const filteredWords = words.filter(word => 
