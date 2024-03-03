@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# melodybrush (UBC CIC Hackathon 2024) :musical_note:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+melodybrush is a web application that facilitates transforms song lyrics into captivating artwork. The aim of this project was to 
+1. allow music to be further accessible for those with hearing loss​
 
-## Available Scripts
+2. generate song covers
 
-In the project directory, you can run:
+3. display stories and create narratives
 
-### `npm start`
+4. create social media posts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+​<p align="center">
+    <img src="docs/home.png" alt="Vita">
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Inspiration :bulb:
 
-### `npm test`
+Due to our love for music, we decided to create a more immersive experience for listeners through cloud computing and generative AI.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Implementation :hammer_and_wrench:
 
-### `npm run build`
+<p align="center">
+    <img src="docs/homeresult.png" alt="Vita Architecture">
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+melodybrush is composed of three major components:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Jurassic-2 Ultra (Amazon Bedrock Edition) by AI21 Labs
+2. Stable Diffusion XL 1.0 by stability.ai
+3. Web Application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Jurassic-2 Ultra LLM :gear:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+We utilized AI21's most power large language model to take lyrics and transform them into a short, descriptive prompt that can be easily drawn. We conducted hyperparameter tuning and prompt engineering through experimenting and testing with Amazon Bedrock's text playground and Jupyter Notebook. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Stable Diffusion XL 1.0 :gear:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The largest image generation model was used to take the response from Jurassic-2, and produce realistic and artistic pieces of artwork and resembles the song lyrics through various keywords, themes, and emotions. Hyperparameter tuning was conducted through Amazon Bedrock's image playground and Jupyter Notebook.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Web Application :desktop_computer:
 
-## Learn More
+The web application was built using React JS paired with Tailwind CSS.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Example Pieces :paintbrush:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Song            | Artwork                                  |
+|-----------------|------------------------------------------|
+| Happy by Pharrell Williams | ![Happy](docs/happy.png) |
+| Falling by Harry Styles | ![Falling](docs/falling.png) |
+| Sunroof by Nicky Youre | ![Sunroof](docs/sunroof.png) |
+| Talking To The Moon by Bruno Mars | ![Talking To The Moon](docs/talkingtothemoon.png) |
+| Twinkle Twinkle Little Star | ![Twinkle Twinkle Little Star](docs/twinkletwinkle.png) |
+| Wake Me Up by Avicii | ![Wake Me Up](docs/wakemeup.png) |
