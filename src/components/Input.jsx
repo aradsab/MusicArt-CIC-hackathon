@@ -33,6 +33,7 @@ const Input = () => {
                 placeholder="Enter your text here..."
                 value={textValue} 
                 onChange={handleChange}
+                maxLength="400"
             ></textarea>
             <button
                 className="py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
