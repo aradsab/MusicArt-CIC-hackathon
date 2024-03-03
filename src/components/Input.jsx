@@ -15,7 +15,7 @@ const Input = () => {
     try {
       // Wait for the Promise to resolve and get the result
       
-      const returnText = await jurassicApi(value);
+      const returnText = await jurassicApi("summarize to 30 words" + value);
       console.log("console1 " + returnText);
       setImage(returnText);
     } catch (error) {

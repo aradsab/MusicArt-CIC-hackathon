@@ -1,9 +1,9 @@
 import { BedrockRuntimeClient, InvokeModelCommand} from '@aws-sdk/client-bedrock-runtime'
 
 const AWS_DEFAULT_REGION = "us-west-2"
-const AWS_ACCESS_KEY_ID = "ASIA42BKWTM3NI4IX67R"
-const AWS_SECRET_ACCESS_KEY = "D2qjI5ACfruGItiPlS591uKpB46pl+GE6/SPRfTr"
-const AWS_SESSION_TOKEN = "IQoJb3JpZ2luX2VjEFMaCXVzLWVhc3QtMSJHMEUCIDz6IYGeVmGnwaiSf+8hLjFWcHMk0teqSoshTJ3wX445AiEArPEvp2if7/diLq8vtJTeitL771NWlII7W023PuQXIoEqmQIITBACGgw4ODA1NTc4NTc1OTAiDCqGN5EvUGd6STmWtCr2AbSSMZTusmt4nQk4gWAQZEu1C+XEvDBf33Hvo2THjiHEt9eZg/XdTpzvdXzu7jkdWQaKqlQBxqv/ZIWGq7wM9LyWrBmpixGE1yvhE0kgbDNsMumndL3DRro4fTmQ0LFYql5xA/kYDa1ZUlF0J3wWnn3sfRDj3B0HDrmcu8JRvfDnHcaXvFqt4GFucaWkdMUj6isxXMrV6EQzGTgZ8q0JhMY93tCE8BSARM5OFqxfs4jg9JMhXho5y32Y5b8cZA1i0os9WyZn0desH1PUSYymPA6GslTcTLoDu0NyZCAU/aT9TU4OnLo0Jw9T4b5srMjY0ia8/wZXnzCo5o2vBjqdAfGVrX5oOd3rQxsDEbPb3oNmo93WG02qSVRifzaiBidlHgmSqxxTeeto69kuqKHPSdrxUPUl4HXZ5fZ2PYd2vwpHvGRv8Bqo6OY0IOWopqR9viLsIo89QqwgJrnQvVXOVypLdy2IfmF8UnOAvMtStgCqju9dLqT1LvZ6Xb2Wuuv20jGNV7cDhwuUMPPv0BBjm/7Y2VTRBmkZAg74qTM="
+const AWS_ACCESS_KEY_ID="ASIA42BKWTM3FKSY2EHF"
+const AWS_SECRET_ACCESS_KEY="wXTGOl9RGrb2jDo4gjjw5n+gcnJ5ajoxa8VHJkX4"
+const AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEFoaCXVzLWVhc3QtMSJHMEUCIDEfs5416Zq/MMkL8jwhGzxZqVvKPtte3qqKZii0zMsGAiEAwbLwZSsFLyb7QDD4NSGqm9VEafFINUBmxEgt4TXtaKsqmQIIUxACGgw4ODA1NTc4NTc1OTAiDKhw2qF3xl4o10+bHir2AZ60Q/pzbtoiN5AnezI8Ft2jLW5vUedivG4tdp/CqsjicU+cwXFSCCXVQqOnaJY+8U59n6NiqEskI44w4vfj1MxqtGFgDbVvvJd0zGnUuqKQ7jx4ezCbEPKB9lB5j//NOOm+6MT1nNXb1g75zvypnlGZeavYFexu8fG+kZG8QOgQKa65F1ucurtnubiLqxWzn481ZvIOGPLZPQa8j7CEV2zySSTf2OCWNjgkbCLB57m9pZE6FGo20mJXVWn5THIpghpd6VAqs9VvmmJBo/oZkWdQTOecxFHuwbac6sANXmSA6qnNPbA084+fKdGDiqNsTy8aI5qv2zCzqI+vBjqdAVncCrgZrXZqlpUIwRUDgJePXfqFzpRezZLS7u4memJIxSwWpvtQM6NXcc2m1L+qJrACmf0wZ0nxOeB5yqJBN6HqeUTk0Tvlj2UDYazqnxRP+gquvjV36vl2vHdT+1unTr7hpL58Q5xHARmJzoPo0cbhNaa4Kfw+r4vmcJUhaqsm3MCj0DLtLi0T67OY0rS7D+wMFqLglT0j6IoiRIk="
 
 let config = {
     service_name: "bedrock-runtime",
@@ -23,7 +23,7 @@ async function jurassicApi(prompt) {
 
 
     const input = {
-        body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":400,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
+        body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":8000,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
         contentType: "application/json",
         accept: "application/json",
         modelId: "ai21.j2-ultra-v1",

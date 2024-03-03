@@ -9,9 +9,9 @@ const Home = () => {
         {/* container */}
         <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center items-center h-full'>
             <h1 className='text-4xl sm:text-7xl font-bold pb-5'>
-                <span className='home-emoji'>🎵</span>
+                
                 <span> transform songs </span>
-                <span className='home-emoji'>🎵</span>
+                
             </h1>
             <h2 className='text-4xl sm:text-6xl font-bold text-[#4171ff]'>
                 into art
