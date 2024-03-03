@@ -23,7 +23,7 @@ async function jurassicApi(prompt) {
 
 
     const input = {
-        body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":400,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
+        body: "{\"prompt\":\"" + prompt + "\",\"maxTokens\":500,\"temperature\":0.9,\"topP\":0.9,\"stopSequences\":[],\"countPenalty\":{\"scale\":0},\"presencePenalty\":{\"scale\":0},\"frequencyPenalty\":{\"scale\":0}}", // required
         contentType: "application/json",
         accept: "application/json",
         modelId: "ai21.j2-ultra-v1",
