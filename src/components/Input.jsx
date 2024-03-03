@@ -10,14 +10,18 @@ const Input = () => {
     setTextValue(event.target.value);
   };
 
-  function callApi(value) {
-    let returnText = jurassicApi(value);
-     
-    console.log(returnText)
-    setImage(returnText);
-    
-    
-  }
+  const callApi = async (value) => {
+    try {
+      // Wait for the Promise to resolve and get the result
+      
+      const returnText = await jurassicApi(value);
+      console.log("console1 " + returnText);
+      setImage(returnText);
+    } catch (error) {
+      // Handle any errors that might occur during the API call
+      console.error('Error calling the API:', error);
+    }
+  };
 
   return (
     <div name='input' className="flex flex-col space-y-4 w-full max-w-lg mx-auto mt-10 mb-10">
