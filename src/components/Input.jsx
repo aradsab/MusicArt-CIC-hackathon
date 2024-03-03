@@ -8,17 +8,17 @@ const Input = () => {
 
   const handleChange = (event) => {    
     const newText = event.target.value.replace(/(\r\n|\n|\r)/gm, ". ");
-    const textFiltered = filterWords(newText);
-    setTextValue(textFiltered);  
+    // const textFiltered = filterWords(newText);
+    setTextValue(newText);  
   };
 
   const callApi = async (value) => {
     try {
       // Remove line breaks from the value
-      const sanitizedValue = value.replace(/\r?\n|\r/g, "");
+      // const sanitizedValue = value.replace(/\r?\n|\r/g, "");
   
       // Wait for the Promise to resolve and get the result
-      const returnText = await jurassicApi(sanitizedValue);
+      const returnText = await jurassicApi("summarize to 30 words" + value);
       console.log("console1 " + returnText);
       setImage(returnText);
     } catch (error) {
@@ -45,7 +45,6 @@ const Input = () => {
                 placeholder="Enter your text here..."
                 value={textValue} 
                 onChange={handleChange}
-                maxLength="400"
             ></textarea>
             <button
                 className="py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
