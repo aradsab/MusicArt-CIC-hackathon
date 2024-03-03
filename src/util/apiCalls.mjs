@@ -17,11 +17,12 @@ let config = {
 
 const client = new BedrockRuntimeClient(config);
 
-async function jurassicApi(prompt) {
+async function jurassicApi(rawprompt) {
 
     // const prompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, " "); // Replace all types of line breaks with a space
-    prompt =  "give a 20 word prompt for a drawing: " + prompt;
-    console.log("before" + prompt);
+    // const newprompt = rawPrompt.replace(/(\r\n|\n|\r)/gm, " ");
+    // const prompt =  "give a 30 word prompt for a drawing: " + rawprompt;
+    // console.log("before" + prompt);
 
 
     const input = {
